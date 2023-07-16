@@ -13,21 +13,34 @@ Scrapes AO3 and deploys to Github Pages using actions.
 
 This is not currently designed to be usable for anyone not comfortable with the command line and modifying configuration files.
 
+**pearwaldorf's notes**<br/>
+As this is somebody's personal project, I have forked it and added additional configuration steps and instructions. I recommend basic knowledge of Git and being comfortable fucking around in the innards of your OS.
+
 ### Running locally
 
 This is for if you don't want to futz around with getting GitHub actions to work or using GitHub in particular.
 
+#### Prep Work
+
+If you have these on your computer already, skip this. If you don't know, go ahead and (re-)install them. It won't hurt anything.
+1. Install [Python](https://www.python.org/downloads/)
+2. [Set your Python path](https://www.mygreatlearning.com/blog/add-python-to-path/)
+3. [Install Git](https://github.com/git-guides/install-git)
+
+
 #### Scraping AO3
-1. Run `git clone --recursive https://github.com/thedeadparrot/ao3backup.git`
-2. Set up a python virtualenv.
+1. Run `git clone --recursive https://github.com/thedeadparrot/ao3backup.git`. It should have two ao3scrape folders, one inside the other.
+2. [Set up a python virtualenv](https://packaging.python.org/en/latest/guides/installing-using-pip-and-virtual-environments/#creating-a-virtual-environment).
 3. Run `pip install -r ao3scrape/requirements.txt`
-4. Modify `ao3scrape/settings.py` to set `AO3_USER` to your own AO3 username.
-5. Run `git rm backup/content/posts/*` in ordert to delete all of my fic and clear the way for your own.
-6. From within the `ao3scrape` subdirectory, run `scrapy crawl ao3`. This will create the markdown files `backup/content/posts`.
+4. Modify `ao3scrape/settings.py` to set `AO3_USER` to your own AO3 username. The easiest way to do this is in a plain text editor like Notepad or the Mac equivalent.
+5. Run `git rm backup/content/posts/*` in order to delete all of my fic and clear the way for your own.
+6. From within the first `ao3scrape` subdirectory, run `scrapy crawl ao3`. This will create the markdown files `backup/content/posts`.
 
 #### Building the static site
 1. Install [Hugo](https://gohugo.io/).
-3. Modify `backup/config.toml` with your own name and links and other configuration you might be interested in.
+2. Follow the steps in the [quickstart guide](https://gohugo.io/getting-started/quick-start/.<br/>
+You might want to pick a different [theme](https://themes.gohugo.io/) at this point. I recommend looking in the "docs" or "dark mode" sections. Or just go with [Ed](https://gohugo-theme-ed.netlify.app/) or [Eureka](https://www.wangchucheng.com/en/docs/hugo-eureka/). Those are nice and readable.
+3. Modify `backup/config.toml` with your own name and links and other configuration you might be interested in. I have added comments on where you should or should not make changes.
 4. Run `hugo` from within the `backup` directory.
 5. Your static site should now be in `backup/public`, which can then be hosted wherever you wish.
 
