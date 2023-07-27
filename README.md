@@ -38,8 +38,8 @@ If you have these on your computer already, skip this. If you don't know, go ahe
 
 #### Building the static site
 1. Install [Hugo](https://gohugo.io/).
-2. Follow the steps in the [quickstart guide](https://gohugo.io/getting-started/quick-start/.<br/>
-You might want to pick a different [theme](https://themes.gohugo.io/) at this point. I recommend looking in the "docs" or "dark mode" sections. Or just go with [Ed](https://gohugo-theme-ed.netlify.app/) or [Eureka](https://www.wangchucheng.com/en/docs/hugo-eureka/). Those are nice and readable.
+2. Follow the steps in the [quickstart guide](https://gohugo.io/getting-started/quick-start/).<br/>
+You might want to pick a different [theme](https://themes.gohugo.io/) at this point. I recommend looking in the "docs" or "dark mode" sections. Or just go with [Ed](https://gohugo-theme-ed.netlify.app/) It's nice and readable.
 3. Modify `backup/config.toml` with your own name and links and other configuration you might be interested in. I have added comments on where you should or should not make changes.
 4. Run `hugo` from within the `backup` directory.
 5. Your static site should now be in `backup/public`, which can then be hosted wherever you wish.
