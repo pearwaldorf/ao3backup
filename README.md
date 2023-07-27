@@ -34,7 +34,7 @@ If you have these on your computer already, skip this. If you don't know, go ahe
 3. Run `pip install -r ao3scrape/requirements.txt`
 4. Modify `ao3scrape/settings.py` to set `AO3_USER` to your own AO3 username. The easiest way to do this is in a plain text editor like Notepad or the Mac equivalent.
 5. Run `git rm backup/content/posts/*` in order to delete all of my fic and clear the way for your own.
-6. From within the first `ao3scrape` subdirectory, run `scrapy crawl ao3`. This will create the markdown files `backup/content/posts`.
+6. From within the first `ao3scrape` subdirectory, run `scrapy crawl ao3`. Depending on how many fics you have, this could take a while. This will create the markdown files in `backup/content/posts`. 
 
 #### Building the static site
 1. Install [Hugo](https://gohugo.io/).
